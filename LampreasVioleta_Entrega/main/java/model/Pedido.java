@@ -1,0 +1,71 @@
+package model;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Pedido realizado por un cliente (FK cliente_id).
+ * Relación N:M con Producto -> lista de DetallePedido.
+ * Relación 1:N con Repartidor -> Un repartidor reparte muchos pedidos
+ */
+public class Pedido {
+    private Integer id;                // PK
+    private Integer clienteId;         // FK a Cliente (lado N de 1:N)
+    private LocalDate fecha;
+    private Integer repartidorId;      // FK a Repartidor (lado N de 1:N)
+
+    private Double total; //Este campo es solo para el JSON y evitar el error de Jackson
+
+    // N:M mediante filas en la tabla detalle_pedido
+    private List<DetallePedido> lineas = new ArrayList<>();
+
+    public Pedido() {}
+    public Pedido(Integer id, Integer clienteId, LocalDate fecha) {
+        this.id = id; this.clienteId = clienteId; this.fecha = fecha;
+    }
+
+    // =====================
+    // GETTERS / SETTERS
+    // =====================
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+
+    public Integer getClienteId() { return clienteId; }
+    public void setClienteId(Integer clienteId) { this.clienteId = clienteId; }
+
+    public LocalDate getFecha() { return fecha; }
+    public void setFecha(LocalDate fecha) { this.fecha = fecha; }
+
+    public Integer getRepartidorId() {
+        return repartidorId;
+    }
+
+    public void setRepartidorId(Integer repartidorId) {
+        this.repartidorId = repartidorId;
+    }
+
+    public List<DetallePedido> getLineas() { return lineas; }
+    public void setLineas(List<DetallePedido> lineas) { this.lineas = lineas; }
+
+    public double getTotal() {
+        if (lineas == null) {
+            return 0.0;
+        }
+        return lineas.stream()
+                .mapToDouble(DetallePedido::getImporte)
+                .sum();
+    }
+
+    // Setter solo para el Jackson (Para importar JSON)
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    @Override public String toString() {
+        return "Pedido{id=%d, clienteId=%d, fecha=%s, repartidorId=%s total=%.2f}"
+                .formatted(id, clienteId, fecha, repartidorId, getTotal());
+    }
+}
