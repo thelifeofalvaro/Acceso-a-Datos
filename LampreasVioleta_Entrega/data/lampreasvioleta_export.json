@@ -1,0 +1,92 @@
+{
+  "clientes": [
+    { "id": 1, "nombre": "Ana López", "email": "ana.lopez@gmail.com", "comercialId": 1, "detalle": null, "pedidos": [] },
+    { "id": 2, "nombre": "Carlos Martín", "email": "carlos.martin@gmail.com", "comercialId": 2, "detalle": null, "pedidos": [] },
+    { "id": 3, "nombre": "Lucía Pérez", "email": "lucia.perez@gmail.com", "comercialId": 1, "detalle": null, "pedidos": [] },
+    { "id": 4, "nombre": "Javier Gómez", "email": "javier.gomez@gmail.com", "comercialId": 3, "detalle": null, "pedidos": [] },
+    { "id": 5, "nombre": "Marta Ruiz", "email": "marta.ruiz@gmail.com", "comercialId": 2, "detalle": null, "pedidos": [] },
+    { "id": 6, "nombre": "David Torres", "email": "david.torres@gmail.com", "comercialId": 1, "detalle": null, "pedidos": [] },
+    { "id": 7, "nombre": "Laura Sánchez", "email": "laura.sanchez@gmail.com", "comercialId": 3, "detalle": null, "pedidos": [] },
+    { "id": 8, "nombre": "Pablo Tapia", "email": "pablo.romero@gmail.com", "comercialId": 2, "detalle": null, "pedidos": [] },
+    { "id": 9, "nombre": "Elena Navarro", "email": "elena.navarro@gmail.com", "comercialId": 1, "detalle": null, "pedidos": [] },
+    { "id": 10, "nombre": "Sergio Molina", "email": "sergio.molina@gmail.com", "comercialId": 3, "detalle": null, "pedidos": [] }
+  ],
+
+  "detallesCliente": [
+    { "id": 1, "direccion": "Calle Mayor 12, Madrid", "telefono": "600111111", "notas": "Cliente habitual" },
+    { "id": 2, "direccion": "Avda. Andalucía 45, Sevilla", "telefono": "600222222", "notas": "Prefiere contacto por email" },
+    { "id": 3, "direccion": "Calle Luna 3, Toledo", "telefono": "600333333", "notas": "Pedidos grandes" },
+    { "id": 4, "direccion": "Calle Sol 9, Valencia", "telefono": "600444444", "notas": "Entrega por la mañana" },
+    { "id": 5, "direccion": "Avda. Europa 21, Barcelona", "telefono": "600555555", "notas": "Cliente nuevo" },
+    { "id": 6, "direccion": "Calle Norte 7, Burgos", "telefono": "600666666", "notas": "Pago puntual" },
+    { "id": 7, "direccion": "Calle Sur 18, Málaga", "telefono": "600777777", "notas": "Zona complicada" },
+    { "id": 8, "direccion": "Avda. Central 10, Zaragoza", "telefono": "600888888", "notas": "Requiere factura" },
+    { "id": 9, "direccion": "Calle Real 5, León", "telefono": "600999999", "notas": "Pedidos pequeños" },
+    { "id": 10, "direccion": "Calle Nueva 30, Oviedo", "telefono": "601000000", "notas": "Horario flexible" }
+  ],
+
+  "productos": [
+    { "id": 1, "nombre": "Lámpara LED Blanca", "precio": 69.0 },
+    { "id": 2, "nombre": "Lámpara LED Negra", "precio": 75.0 },
+    { "id": 3, "nombre": "Lámpara Colgante Industrial", "precio": 120.0 },
+    { "id": 4, "nombre": "Aplique Pared Vintage", "precio": 45.0 },
+    { "id": 5, "nombre": "Lámpara de Mesa", "precio": 39.9 },
+    { "id": 6, "nombre": "Foco LED Exterior", "precio": 55.5 },
+    { "id": 7, "nombre": "Lámpara Techo Moderna", "precio": 89.0 },
+    { "id": 8, "nombre": "Guirnalda LED", "precio": 29.9 },
+    { "id": 9, "nombre": "Lámpara Infantil", "precio": 34.5 },
+    { "id": 10, "nombre": "Panel LED Oficina", "precio": 99.0 }
+  ],
+
+  "pedidos": [
+    { "id": 1, "clienteId": 1, "fecha": "2025-12-01", "repartidorId": 1, "lineas": [], "total": 138.0 },
+    { "id": 2, "clienteId": 2, "fecha": "2025-12-02", "repartidorId": 2, "lineas": [], "total": 75.0 },
+    { "id": 3, "clienteId": 3, "fecha": "2025-12-03", "repartidorId": 1, "lineas": [], "total": 120.0 },
+    { "id": 4, "clienteId": 4, "fecha": "2025-12-04", "repartidorId": 3, "lineas": [], "total": 45.0 },
+    { "id": 5, "clienteId": 5, "fecha": "2025-12-05", "repartidorId": 2, "lineas": [], "total": 39.9 },
+    { "id": 6, "clienteId": 6, "fecha": "2025-12-06", "repartidorId": 1, "lineas": [], "total": 55.5 },
+    { "id": 7, "clienteId": 7, "fecha": "2025-12-07", "repartidorId": 3, "lineas": [], "total": 89.0 },
+    { "id": 8, "clienteId": 8, "fecha": "2025-12-08", "repartidorId": 2, "lineas": [], "total": 29.9 },
+    { "id": 9, "clienteId": 9, "fecha": "2025-12-09", "repartidorId": 1, "lineas": [], "total": 34.5 },
+    { "id": 10, "clienteId": 10, "fecha": "2025-12-10", "repartidorId": 3, "lineas": [], "total": 99.0 }
+  ],
+
+  "detallesPedido": [
+    { "pedidoId": 1, "productoId": 1, "cantidad": 2, "precioUnit": 69.0, "importe": 138.0 },
+    { "pedidoId": 2, "productoId": 2, "cantidad": 1, "precioUnit": 75.0, "importe": 75.0 },
+    { "pedidoId": 3, "productoId": 3, "cantidad": 1, "precioUnit": 120.0, "importe": 120.0 },
+    { "pedidoId": 4, "productoId": 4, "cantidad": 1, "precioUnit": 45.0, "importe": 45.0 },
+    { "pedidoId": 5, "productoId": 5, "cantidad": 1, "precioUnit": 39.9, "importe": 39.9 },
+    { "pedidoId": 6, "productoId": 6, "cantidad": 1, "precioUnit": 55.5, "importe": 55.5 },
+    { "pedidoId": 7, "productoId": 7, "cantidad": 1, "precioUnit": 89.0, "importe": 89.0 },
+    { "pedidoId": 8, "productoId": 8, "cantidad": 1, "precioUnit": 29.9, "importe": 29.9 },
+    { "pedidoId": 9, "productoId": 9, "cantidad": 1, "precioUnit": 34.5, "importe": 34.5 },
+    { "pedidoId": 10, "productoId": 10, "cantidad": 1, "precioUnit": 99.0, "importe": 99.0 }
+  ],
+
+"comerciales": [
+  { "id": 1, "nombre": "Laura Porras", "email": "laura@lvioleta.es", "telefono": "611111111", "zona": "Centro", "clientes": [] },
+  { "id": 2, "nombre": "Pedro Zorrilla", "email": "pedro@lvioleta.es", "telefono": "611222222", "zona": "Sur", "clientes": [] },
+  { "id": 3, "nombre": "Ana del Val", "email": "ana@lvioleta.es", "telefono": "611333333", "zona": "Norte", "clientes": [] },
+  { "id": 4, "nombre": "Carlos Erdoazain", "email": "carlos@lvioleta.es", "telefono": "611444444", "zona": "Este", "clientes": [] },
+  { "id": 5, "nombre": "Marta Torralba", "email": "marta@lvioleta.es", "telefono": "611555555", "zona": "Oeste", "clientes": [] },
+  { "id": 6, "nombre": "Javier Becerra", "email": "javier@lvioleta.es", "telefono": "611666666", "zona": "Centro", "clientes": [] },
+  { "id": 7, "nombre": "Lucía Sanchez", "email": "lucia@lvioleta.es", "telefono": "611777777", "zona": "Sur", "clientes": [] },
+  { "id": 8, "nombre": "David Diaz", "email": "david@lvioleta.es", "telefono": "611888888", "zona": "Norte", "clientes": [] },
+  { "id": 9, "nombre": "Elena Foster", "email": "elena@lvioleta.es", "telefono": "611999999", "zona": "Este", "clientes": [] },
+  { "id": 10, "nombre": "Sergio Sainz", "email": "sergio@lvioleta.es", "telefono": "612000000", "zona": "Oeste", "clientes": [] }
+],
+
+"repartidores": [
+  { "id": 1, "nombre": "Juan Tonga", "telefono": "622111111", "zona": "Centro", "pedidos": [] },
+  { "id": 2, "nombre": "Luis Muñoz", "telefono": "622222222", "zona": "Sur", "pedidos": [] },
+  { "id": 3, "nombre": "Marta Heras", "telefono": "622333333", "zona": "Norte", "pedidos": [] },
+  { "id": 4, "nombre": "Pedro Molina", "telefono": "622444444", "zona": "Este", "pedidos": [] },
+  { "id": 5, "nombre": "Ana Sevilla", "telefono": "622555555", "zona": "Oeste", "pedidos": [] },
+  { "id": 6, "nombre": "Carlos Echevarria", "telefono": "622666666", "zona": "Centro", "pedidos": [] },
+  { "id": 7, "nombre": "Lucía Toledo", "telefono": "622777777", "zona": "Sur", "pedidos": [] },
+  { "id": 8, "nombre": "David Aguado", "telefono": "622888888", "zona": "Norte", "pedidos": [] },
+  { "id": 9, "nombre": "Elena Aurioles", "telefono": "622999999", "zona": "Este", "pedidos": [] },
+  { "id": 10, "nombre": "Sergio Pino", "telefono": "623000000", "zona": "Oeste", "pedidos": [] }
+]
+}

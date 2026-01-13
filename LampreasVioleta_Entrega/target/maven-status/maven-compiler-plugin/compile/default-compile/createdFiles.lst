@@ -1,0 +1,4 @@
+dao\DetalleClienteDAO.class
+services\ClienteDetalle.class
+app\LampreasVioletaApp.class
+app\ClientesView.class
