@@ -1,3 +1,5 @@
+[Enunciado completo](https://github.com/user-attachments/files/24588464/Ampliacion.del.sistema.de.gestion.de.Lampreas.Violeta.con.nuevas.entidades.pdf)
+
 📌Descripción general:
 
 Este proyecto consiste en la ampliación del sistema de gestión de Lampreas Violeta, desarrollado inicialmente en Java durante las clases, incorporando nuevas entidades, 
