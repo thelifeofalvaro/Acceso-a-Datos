@@ -1,25 +1,89 @@
-# Proyecto Lampreas Violeta -  DemoRelaciones (DAOs + JDBC + JSON)
+# 🐟 Lampreas Violeta — DemoRelaciones
 
-Este proyecto es una aplicación Java de consola cuyo objetivo es demostrar el funcionamiento de una base de datos relacional mediante el uso del patrón DAO (Data Access Object), JDBC y serialización JSON.
+Aplicación Java de consola desarrollada para demostrar el acceso a una base de datos relacional mediante JDBC y el patrón DAO (Data Access Object).
 
-La aplicación permite:
-- Probar la conexión con la base de datos
-- Realizar operaciones CRUD básicas
-- Comprobar relaciones entre tablas (1:1, 1:N y N:M)
-- Exportar e importar una instantánea completa de la base de datos en formato JSON
-- Está pensada como herramienta de prueba y validación de:
-- Integridad referencial (claves foráneas)
-- Correcto funcionamiento de los DAOs
-- Persistencia de datos
-  
-## Funcionamiento de la aplicación
-Al ejecutar la aplicación se muestra un menú interactivo por consola que permite:
-- Listar registros de cada entidad
-- Insertar nuevos registros
-- Buscar registros por ID
-- Ver pedidos con sus líneas asociadas
-- Exportar todos los datos de la base de datos a un fichero JSON
-- Importar datos desde un fichero JSON respetando el orden de claves foráneas
-- Vaciar completamente la base de datos
-- Exportación a JSON generando un fichero que contiene una instantánea completa de la BBDD, incluyendo todas las entidades y sus relaciones.
-- Importación desde JSON ordenada y respetando el orden de las tablas, si existen PK duplicadas la operación falla
+El proyecto permite trabajar con operaciones CRUD, relaciones entre entidades y persistencia de datos mediante una base de datos relacional y archivos JSON.
+
+## 🎯 Objetivo
+
+El objetivo principal es aplicar diferentes conceptos de acceso a datos sobre un sistema de gestión, separando la lógica de la aplicación del acceso a la base de datos mediante el patrón DAO.
+
+El proyecto permite comprobar:
+
+- Conexión con una base de datos.
+- Operaciones CRUD.
+- Relaciones entre entidades.
+- Integridad referencial mediante claves foráneas.
+- Persistencia de datos.
+- Exportación e importación de información en JSON.
+
+## ⚙️ Funcionalidades
+
+La aplicación dispone de un menú interactivo desde el que se pueden realizar diferentes operaciones:
+
+- Comprobar la conexión con la base de datos.
+- Listar registros de las diferentes entidades.
+- Insertar nuevos registros.
+- Buscar registros por identificador.
+- Realizar operaciones CRUD.
+- Consultar pedidos junto con sus líneas asociadas.
+- Exportar la información completa de la base de datos a JSON.
+- Importar información desde un archivo JSON.
+- Vaciar la base de datos.
+
+## 🧱 Relaciones entre entidades
+
+El proyecto trabaja con diferentes tipos de relaciones entre las entidades de la base de datos:
+
+- Relaciones **1:1**.
+- Relaciones **1:N**.
+- Relaciones **N:M**.
+
+Estas relaciones permiten comprobar el funcionamiento de las claves foráneas y la integridad referencial durante las operaciones realizadas desde la aplicación.
+
+## 🗂️ Patrón DAO
+
+El acceso a los datos se organiza mediante el patrón **DAO (Data Access Object)**.
+
+Cada entidad dispone de una interfaz DAO con operaciones como:
+
+- `insert`
+- `findById`
+- `findAll`
+- `update`
+- `delete`
+
+Las implementaciones concretas utilizan **JDBC** para comunicarse con la base de datos relacional.
+
+De esta forma, la lógica del menú y de la aplicación queda separada de las operaciones de acceso y persistencia de datos.
+
+## 📤 Exportación e importación JSON
+
+La aplicación permite generar una instantánea completa de la base de datos en formato JSON.
+
+La exportación incluye las diferentes entidades y sus relaciones.
+
+También se permite importar posteriormente esa información desde JSON. Durante la importación se respeta el orden necesario para mantener las relaciones mediante claves foráneas.
+
+En caso de existir claves primarias duplicadas, la operación de importación falla.
+
+## 🛠️ Tecnologías y conceptos
+
+- Java
+- JDBC
+- Base de datos relacional
+- Patrón DAO
+- Operaciones CRUD
+- Claves primarias y foráneas
+- Integridad referencial
+- JSON
+- Jackson
+- Aplicación de consola
+
+## 🎓 Contexto académico
+
+Proyecto desarrollado durante la asignatura **Acceso a Datos de 2º DAM** para trabajar el acceso a bases de datos relacionales mediante Java y JDBC.
+
+## 👤 Autor
+
+**Álvaro Medina**
