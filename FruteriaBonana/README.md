@@ -1,40 +1,77 @@
-## Proyecto: Fruteria Bonana - Enunciado
+# 🍎 Frutería Bonana
 
-Una frutería de barrio quiere un programa de consola que le permita guardar y recuperar su listado de frutas en un archivo de texto plano. No hay base de datos. El dueño necesita:
-• Exportar el inventario actual a un .txt.
-• Importar desde un .txt para cargar el inventario (por ejemplo, al iniciar el día).
-### Modelo de datos
-Crea la clase Fruta con estos campos:
-• int id
-• String nombre (p. ej., “Manzana Fuji”, “Plátano de Canarias”)
-• double precioKg (precio por kilogramo)
-• int stockKg (stock disponible en kilogramos)
-Puedes añadir constructor vacío y con parámetros, getters/setters y toString().
-### Formato del archivo TXT
-• Un registro por línea, con separador ; (punto y coma).  
+Aplicación Java de consola para gestionar un inventario de frutas en memoria y persistirlo mediante archivos de texto plano.
 
-• Orden de campos por línea: id;nombre;precioKg;stockKg
-  
-Codificación obligatoria: UTF-8.  
+## 🎯 Objetivo
 
-### Ejemplos de líneas válidas:  
+El proyecto consiste en desarrollar una aplicación sencilla para que una frutería pueda guardar y recuperar su inventario sin utilizar una base de datos.
 
-1;Manzana Fuji;2.95;120  
+La aplicación permite trabajar con un listado de frutas en memoria y exportarlo o importarlo mediante un archivo `.txt`.
 
-2;Plátano de Canarias;3.30;80
+## ⚙️ Funcionalidades
 
-3;Pera "Conferencia";2.10;60
-### Requisitos funcionales (consola)
-Menú :
-1. Añadir fruta en memoria (pide datos por teclado).
-2. Listar frutas en memoria (por pantalla).
-3. Exportar a TXT → escribe el fichero data/frutas.txt con el formato indicado.
-4. Importar desde TXT → lee el fichero data/frutas.txt y carga/reemplaza la lista en memoria.
+La aplicación dispone de un menú interactivo por consola con las siguientes opciones:
+
+1. Añadir una fruta en memoria.
+2. Listar las frutas almacenadas.
+3. Exportar el inventario a un archivo TXT.
+4. Importar el inventario desde un archivo TXT.
 5. Salir.
-### Validaciones:
-• nombre no vacío (trim().length() >= 2)  
 
-• precioKg >= 0  
+Los datos se almacenan inicialmente en memoria y pueden persistirse en `data/frutas.txt`.
 
-• stockKg >= 0
-Mensajería clara por consola (éxito/errores).
+## 🧱 Modelo de datos
+
+Cada fruta se representa mediante la clase `Fruta`, con los siguientes atributos:
+
+- `id`: identificador de la fruta.
+- `nombre`: nombre de la fruta.
+- `precioKg`: precio por kilogramo.
+- `stockKg`: stock disponible en kilogramos.
+
+La clase también incorpora los métodos necesarios para trabajar con estos datos, como constructores, getters, setters y `toString()`.
+
+## 📄 Formato del archivo
+
+El inventario se almacena en un archivo de texto plano utilizando `;` como separador.
+
+Cada línea representa una fruta siguiendo el formato:
+
+    id;nombre;precioKg;stockKg
+
+Ejemplo:
+
+    1;Manzana Fuji;2.95;120
+    2;Plátano de Canarias;3.30;80
+    3;Pera "Conferencia";2.10;60
+
+El archivo utiliza codificación UTF-8.
+
+## ✅ Validaciones
+
+La aplicación comprueba los datos introducidos antes de añadir una fruta:
+
+- El nombre no puede estar vacío y debe tener al menos 2 caracteres.
+- El precio por kilogramo debe ser mayor o igual que 0.
+- El stock debe ser mayor o igual que 0.
+
+También se muestran mensajes claros en consola para indicar operaciones realizadas correctamente o errores de validación.
+
+## 🛠️ Tecnologías y conceptos
+
+- Java
+- Programación orientada a objetos
+- Colecciones en memoria
+- Lectura y escritura de archivos
+- Archivos de texto
+- Codificación UTF-8
+- Validación de datos
+- Aplicaciones de consola
+
+## 🎓 Contexto académico
+
+Proyecto desarrollado durante la asignatura **Acceso a Datos de 2º DAM**, como ejercicio de persistencia mediante archivos de texto plano.
+
+## 👤 Autor
+
+**Álvaro Medina**
