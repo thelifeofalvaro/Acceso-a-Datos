@@ -1,66 +1,117 @@
+# 🐟 Lampreas Violeta — Entrega
+
+Ampliación de un sistema de gestión desarrollado en Java, incorporando nuevas entidades, sus correspondientes DAOs y funcionalidades adicionales de persistencia y exportación de datos.
+
+La ampliación mantiene el acceso a la base de datos mediante JDBC y el patrón DAO, e incorpora la serialización de datos en formato JSON mediante Jackson.
+
+## 🎯 Objetivos
+
+Los principales objetivos de la ampliación son:
+
+- Extender el modelo de datos existente.
+- Incorporar nuevas entidades al sistema.
+- Implementar los DAOs correspondientes.
+- Mantener las relaciones entre las diferentes entidades.
+- Ampliar el programa principal con nuevas opciones de menú.
+- Incorporar la exportación e importación de datos mediante JSON.
+
+## 🧱 Nuevas entidades
+
+Se incorporan las siguientes entidades al modelo:
+
+### Repartidor
+
+Representa a la persona encargada del reparto de los pedidos.
+
+Relación:
+
+- Un `Repartidor` puede estar asociado a muchos `Pedido` → **1:N**.
+
+### Comercial
+
+Representa al comercial responsable de la gestión de los clientes.
+
+Relación:
+
+- Un `Comercial` puede estar asociado a muchos `Cliente` → **1:N**.
+
+## 🔗 Relaciones del modelo
+
+Además de las nuevas relaciones, se mantienen y consolidan las relaciones existentes:
+
+- `Pedido` → `DetallePedido`: **1:N**
+- `DetallePedido` → `Pedido`: **N:1**
+- `DetallePedido` → `Producto`: **N:1**
+
+El modelo permite trabajar con las relaciones entre las diferentes entidades y comprobar el funcionamiento de las claves foráneas.
+
+## 🗂️ Persistencia y DAOs
+
+Para cada nueva entidad se implementa su correspondiente DAO siguiendo el patrón utilizado en el sistema original.
+
+Las interfaces DAO incluyen operaciones CRUD:
+
+- `insert`
+- `findById`
+- `findAll`
+- `update`
+- `delete`
+
+Las implementaciones utilizan **JDBC** para realizar las operaciones sobre la base de datos relacional.
+
+Los DAOs existentes también se adaptan cuando es necesario para mantener la coherencia del modelo y sus relaciones.
+
+## 🧭 Programa principal
+
+El programa principal se amplía para integrar las nuevas entidades dentro del menú de la aplicación.
+
+Entre las operaciones disponibles se incluyen:
+
+- Alta de repartidores.
+- Alta de comerciales.
+- Consulta por identificador.
+- Listado completo de registros.
+- Eliminación de registros.
+- Gestión de pedidos.
+- Consulta de pedidos junto con sus líneas asociadas.
+- Visualización de los datos persistidos.
+
+La lógica del menú delega las operaciones de acceso a datos en los DAOs correspondientes, manteniendo separada la interacción con el usuario de la persistencia.
+
+## 📤 Exportación e importación JSON
+
+Se incorpora una funcionalidad de exportación de los datos mediante **Jackson**.
+
+A través de `ObjectMapper`, la aplicación puede generar un archivo JSON con una instantánea de la información almacenada en la base de datos.
+
+La aplicación también permite importar posteriormente los datos desde JSON.
+
+Durante la importación se respeta el orden necesario para mantener la integridad de las relaciones entre tablas y sus claves foráneas.
+
+Si existen claves primarias duplicadas, la operación de importación falla.
+
+## 🛠️ Tecnologías y conceptos
+
+- Java
+- JDBC
+- Patrón DAO
+- Base de datos relacional
+- Operaciones CRUD
+- Relaciones entre entidades
+- Claves primarias y foráneas
+- Integridad referencial
+- JSON
+- Jackson (`ObjectMapper`)
+- Aplicaciones de consola
+
+## 📚 Enunciado
+
 [Enunciado completo](https://github.com/user-attachments/files/24588464/Ampliacion.del.sistema.de.gestion.de.Lampreas.Violeta.con.nuevas.entidades.pdf)
 
-📌Descripción general:
+## 🎓 Contexto académico
 
-Este proyecto consiste en la ampliación del sistema de gestión de Lampreas Violeta, desarrollado inicialmente en Java durante las clases, incorporando nuevas entidades, 
-sus DAOs correspondientes y una funcionalidad de exportación de datos a JSON utilizando la librería Jackson. El sistema permite la gestión de pedidos, clientes y productos, 
-y ha sido extendido para incluir nuevas figuras relacionadas con el proceso de venta y distribución.
+Proyecto desarrollado durante la asignatura **Acceso a Datos de 2º DAM** como ampliación de un sistema de gestión desarrollado previamente en Java.
 
-🎯 Objetivos del proyecto:
+## 👤 Autor
 
-Los objetivos principales de esta ampliación son:
-- Extender el modelo de datos del sistema.
-- Aplicar el patrón DAO para la persistencia de nuevas entidades.
-- Mejorar el programa principal con nuevas opciones de menú.
-- Incorporar una funcionalidad de exportación a JSON usando Jackson.
-
-🧱 Modelo de datos y nuevas entidades
-Se han incorporado las siguientes clases al modelo:
-- Repartidor: Representa a la persona encargada de repartir los pedidos.
-  Relación 1:N con Pedido (un repartidor puede repartir muchos pedidos).
-- Comercial: Representa al comercial responsable de la gestión de clientes.
-  Relación 1:N con Cliente.
-
-Además, se han consolidado las relaciones existentes:
-
-- Pedido: Relación 1:N con DetallePedido.
-- DetallePedido: Relación N:1 con Pedido.
-- DetallePedido:Relación N:1 con Producto.
-
-🗂️ Persistencia y DAOs
-
-Para cada entidad nueva se ha implementado su correspondiente DAO, siguiendo el patrón usado en el archivo original:
-
-Interfaces DAO con métodos CRUD:
-
-- insert
-- findById
-- findAll
-- update
-- delete
-
-Implementaciones concretas utilizando JDBC y base de datos relacional.
-
-Persistencia adicional mediante ficheros (JSON).
-
-Los DAOs existentes han sido adaptados cuando ha sido necesario para mantener la coherencia del modelo y sus relaciones.
-
-🧭 Programa principal y menú
-
-El programa principal ha sido actualizado para integrar completamente las nuevas entidades dentro del flujo de la aplicación.
-- Se han incorporado nuevas opciones que permiten:
-    Alta de nuevas entidades (Comercial, Repartidor).
-    Consulta por identificador.
-    Listado completo de registros.
-    Eliminación de registros.
-
-El menú sigue una estructura clara y numerada, permitiendo al usuario interactuar con el sistema desde consola de forma intuitiva.
-
-Ejemplo de operaciones disponibles: Gestión de repartidores, Gestión de comerciales, Listado de pedidos con sus líneas asociadas, Visualización de datos persistidos
-
-La lógica del menú delega las operaciones en los DAOs correspondientes, manteniendo una separación clara entre la lógica de presentación (menú), lógica de negocio y 
-acceso a datos.
-
-📤 Exportación de datos a JSON
-Se ha implementado una funcionalidad de exportación de datos a JSON utilizando la librería Jackson (ObjectMapper), que genera automática del fichero en la carpeta del proyecto, 
-siendo también compatibilidad con importación posterior. Ambas se realizan desde el menú lo que permite al usuario generar el fichero JSON bajo demanda.
+**Álvaro Medina**
