@@ -1,4 +1,4 @@
-# 🐟 Lampreas Violeta — DemoRelaciones
+# 🐟 Lampreas Violeta
 
 Aplicación Java de consola desarrollada para demostrar el acceso a una base de datos relacional mediante JDBC y el patrón DAO (Data Access Object).
 
